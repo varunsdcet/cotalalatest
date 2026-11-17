@@ -1,0 +1,81 @@
+.cotala-chat-widget.cotala-chat-open {
+  background: #000;
+}
+
+.cotala-chat-widget .cotala-chat-header {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cotala-chat-widget .cotala-chat-messages {
+  background: #000;
+}
+
+.cotala-chat-widget .cotala-chat-footer {
+  background: rgba(10, 10, 10, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cotala-chat-widget .cotala-chat-panel {
+  background: rgba(24, 24, 27, 0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cotala-chat-widget .cotala-chat-panel h4,
+.cotala-chat-widget .cotala-chat-panel p,
+.cotala-chat-widget .cotala-chat-panel label {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cotala-chat-widget .cotala-chat-muted {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cotala-chat-widget .cotala-chat-input {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.cotala-chat-widget .cotala-chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.cotala-chat-widget .cotala-chat-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cotala-chat-widget .cotala-chat-chip:hover {
+  background: rgba(179, 136, 255, 0.15);
+  border-color: rgba(179, 136, 255, 0.35);
+}
+
+.cotala-chat-widget .cotala-chat-icon-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cotala-chat-widget .cotala-chat-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.cotala-chat-widget .cotala-chat-send {
+  background: #b388ff;
+}
+
+.cotala-chat-widget .cotala-chat-send:hover {
+  background: #a06ae9;
+}
+
+.cotala-chat-widget .cotala-chat-fab {
+  background: #b388ff;
+  border-color: rgba(179, 136, 255, 0.8);
+}
+
+.cotala-chat-widget .cotala-chat-fab:hover {
+  background: #a06ae9;
+}

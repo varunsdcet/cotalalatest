@@ -1,0 +1,125 @@
+.proof-review-page {
+  background-color: #121214;
+}
+
+.proof-review-page .hero-section {
+  position: relative;
+  padding: 52px 40px 26px;
+  background: radial-gradient(circle at 20% 20%, #121214, #121214 60%);
+  min-height: 0;
+  color: #fff;
+}
+
+.proof-review-page .top-button {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+}
+
+.proof-review-page .top-button .custom-font {
+  display: inline-block;
+  background: #232122;
+  color: #fff;
+  border-radius: 3rem;
+  padding: 10px 22px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.proof-review-page .hero-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.proof-review-page .hero-desc {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #7c777d;
+}
+
+.proof-review-page .hero-desc-1 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #b082f2;
+  margin: 6px 0 0;
+}
+
+.proof-review-page .order-card-1 {
+  background: #111;
+  border-radius: 18px;
+  border: 1px solid #1f1f1f;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.proof-review-page .order-top {
+  background: linear-gradient(90deg, #2a2233, #1a1a1a);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.proof-review-page .proof-status {
+  color: #bebcc1;
+  font-size: 12px;
+}
+
+.proof-review-page .btn-main {
+  background: #b082f2;
+  border: none;
+  color: #000;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.proof-review-page .btn-outline {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.proof-review-page .btn-outline:hover {
+  background: #b082f2;
+  border-color: #b082f2;
+  color: #000;
+}
+
+.proof-review-page .btn-main:disabled,
+.proof-review-page .btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.proof-review-page .proof-textarea {
+  width: 100%;
+  min-height: 120px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px;
+}
+
+@media (max-width: 768px) {
+  .proof-review-page .hero-section {
+    padding: 42px 24px 22px;
+  }
+
+  .proof-review-page .hero-desc-1 {
+    font-size: 24px;
+  }
+}

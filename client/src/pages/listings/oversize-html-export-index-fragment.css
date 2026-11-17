@@ -1,0 +1,92 @@
+/* Subset of index.css needed for FeatureListingPage4Static tables (standalone HTML export) */
+.bold {
+  font-weight: 600;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.address {
+  font-size: 12px;
+  font-weight: 600;
+}
+.vertical-align-top {
+  vertical-align: top;
+}
+.vertical-align-middle {
+  vertical-align: middle;
+}
+.column-1 {
+  width: 100%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 33.33%;
+}
+.column-5 {
+  width: 20%;
+}
+td.sep-left {
+  border-right: 0.5px solid #d1d5db;
+  padding-right: 9px;
+  vertical-align: top;
+}
+td.sep-middle {
+  border-right: 0.5px solid #d1d5db;
+  padding-left: 9px;
+  padding-right: 9px;
+  vertical-align: top;
+}
+td.sep-right {
+  padding-left: 9px;
+  vertical-align: top;
+}
+.body-table-container {
+  font-size: 10px !important;
+}
+.body-table-container.feature-sheet-p4-pdf-spacing {
+  font-family: Arial, Helvetica, "Liberation Sans", "Helvetica Neue", sans-serif !important;
+  font-size: 7px !important;
+  line-height: 1.28 !important;
+}
+.feature-sheet-p4-pdf-spacing .nested-Table th,
+.feature-sheet-p4-pdf-spacing .nested-Table td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  line-height: 1.28;
+}
+.feature-sheet-p4-pdf-spacing .header-table td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 1.28;
+}
+.feature-sheet-p4-pdf-spacing .footer-table td {
+  line-height: 1.28;
+}
+table.table > td,
+.column-1,
+.column-2,
+.column-3 {
+  padding: 0;
+  border-spacing: 0;
+}
+.nested-Table td,
+.table td {
+  text-align: left;
+}
+.nested-Table th,
+.table th {
+  text-align: left;
+  font-weight: 600;
+  width: 130px;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}

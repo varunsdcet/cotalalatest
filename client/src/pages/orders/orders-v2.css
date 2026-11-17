@@ -1,0 +1,430 @@
+/* My Orders v2 (my-order-2.html). Scoped under .orders-v2 because index.css
+   already defines a generic .order-card used elsewhere. */
+
+.orders-v2 .orders-v2-hero {
+  position: relative;
+  background: #121214;
+}
+
+.orders-v2 .top-button {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+.orders-v2 .top-button a {
+  display: inline-block;
+  border-radius: 9999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #2a2a2a;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.orders-v2 .top-button a:hover {
+  background: #b082f2;
+  color: #000;
+}
+
+.orders-v2 .order-history-section {
+  width: 100%;
+  padding: 14px 0 30px;
+  background: transparent;
+}
+
+.orders-v2 .order-card {
+  border: 1px solid #303030;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 0;
+  background: #111111;
+  margin-bottom: 40px;
+  position: relative;
+  transition: none;
+}
+
+.orders-v2 .order-card:hover {
+  background: #111111;
+  border-color: #303030;
+}
+
+.orders-v2 .order-card-header {
+  background: #1e2a20;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+  min-height: 75px;
+  align-items: center;
+}
+
+.orders-v2 .order-card.order-purple .order-card-header {
+  background: #251f2b;
+}
+
+.orders-v2 .order-card.order-cancelled .order-card-header {
+  background: #1d1d1d;
+}
+
+.orders-v2 .order-meta-label {
+  color: #b8b8b8;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  text-align: left;
+}
+
+.orders-v2 .order-meta-value {
+  color: #c6c6c6;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.orders-v2 .invoice-link {
+  color: #a879e9;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.orders-v2 .invoice-link:hover {
+  color: #c8a4ff;
+  text-decoration: underline;
+}
+
+.orders-v2 .order-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.orders-v2 .order-table {
+  width: 100%;
+  min-width: 760px;
+  margin: 0;
+  border-collapse: collapse;
+  vertical-align: middle;
+  color: #eeeeee;
+}
+
+.orders-v2 .order-table thead th {
+  padding: 19px 18px 15px;
+  border: none;
+  color: #49474a;
+  background: #111111;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.orders-v2 .order-table tbody td {
+  padding: 11px 18px;
+  border: none;
+  background: #111111;
+  font-size: 14px;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.orders-v2 .order-table thead th:first-child,
+.orders-v2 .order-table tbody td:first-child {
+  padding-left: 35px;
+  width: 43%;
+}
+
+.orders-v2 .order-table thead th:nth-child(2),
+.orders-v2 .order-table tbody td:nth-child(2) {
+  width: 29%;
+}
+
+.orders-v2 .order-table thead th:nth-child(3),
+.orders-v2 .order-table tbody td:nth-child(3) {
+  width: 11%;
+}
+
+.orders-v2 .order-table thead th:last-child,
+.orders-v2 .order-table tbody td:last-child {
+  padding-right: 35px;
+  width: 17%;
+}
+
+.orders-v2 .order-table tbody tr:last-child td {
+  padding-bottom: 25px;
+}
+
+.orders-v2 .product-title {
+  color: #d2d2d2;
+  font-weight: 600;
+}
+
+.orders-v2 .product-sub {
+  display: block;
+  color: #b082f2;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.orders-v2 .product-description {
+  color: #a4a4a4;
+  white-space: nowrap;
+}
+
+.orders-v2 .product-qty {
+  color: #a9a9a9;
+  white-space: nowrap;
+}
+
+.orders-v2 .order-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 145px;
+  min-height: 34px;
+  padding: 5px 16px;
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.orders-v2 .status-complete,
+.orders-v2 .status-track {
+  color: #b57af4;
+}
+
+.orders-v2 .status-progress {
+  color: #70ee70;
+}
+
+.orders-v2 .status-new {
+  color: #eeeeee;
+}
+
+.orders-v2 .status-pending {
+  color: #ff777e;
+}
+
+.orders-v2 .status-cancelled {
+  color: #7a7a7a;
+}
+
+.orders-v2 a.order-status:hover {
+  background: rgba(181, 122, 244, 0.12);
+}
+
+.orders-v2 .status-cell-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orders-v2 .warning-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: #ff777e;
+}
+
+/* Per-order action bar (not in mock; follows its pill-button styling) */
+.orders-v2 .order-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 35px 24px;
+}
+
+.orders-v2 .ov2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #b082f2;
+  background: transparent;
+  color: #b082f2;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.orders-v2 .ov2-btn:hover {
+  background: #b082f2;
+  color: #000;
+}
+
+.orders-v2 .ov2-btn.primary {
+  background: #b082f2;
+  color: #000;
+}
+
+.orders-v2 .ov2-btn.primary:hover {
+  background: #c8a4ff;
+}
+
+.orders-v2 .ov2-btn.danger {
+  border-color: #ff4d6d;
+  color: #ff4d6d;
+}
+
+.orders-v2 .ov2-btn.danger:hover {
+  background: #ff4d6d;
+  color: #fff;
+}
+
+.orders-v2 .ov2-notice {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.orders-v2 .ov2-notice.success {
+  border: 1px solid rgba(112, 238, 112, 0.4);
+  background: rgba(112, 238, 112, 0.08);
+  color: #9ff59f;
+}
+
+.orders-v2 .ov2-notice.error {
+  border: 1px solid rgba(255, 119, 126, 0.4);
+  background: rgba(255, 119, 126, 0.08);
+  color: #ff9ca1;
+}
+
+.orders-v2 .ov2-empty {
+  padding: 40px 0;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .orders-v2 .order-card {
+    border-radius: 24px;
+    margin-bottom: 30px;
+  }
+
+  .orders-v2 .order-card-header {
+    gap: 18px 30px;
+    padding: 22px 25px;
+  }
+
+  .orders-v2 .order-meta-label {
+    font-size: 14px;
+  }
+
+  .orders-v2 .order-meta-value {
+    font-size: 17px;
+  }
+
+  .orders-v2 .order-table thead th:first-child,
+  .orders-v2 .order-table tbody td:first-child {
+    padding-left: 25px;
+  }
+
+  .orders-v2 .order-table thead th:last-child,
+  .orders-v2 .order-table tbody td:last-child {
+    padding-right: 25px;
+  }
+
+  .orders-v2 .order-status {
+    min-width: 125px;
+  }
+
+  .orders-v2 .order-card-actions {
+    padding: 0 25px 22px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .orders-v2 .top-button {
+    position: static;
+    padding: 0 0 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .orders-v2 .order-history-section {
+    padding-top: 10px;
+  }
+
+  .orders-v2 .order-card {
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .orders-v2 .order-card-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 12px;
+    padding: 20px 18px;
+  }
+
+  .orders-v2 .order-meta-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .orders-v2 .order-meta-value {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .orders-v2 .order-card-header .order-meta:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .orders-v2 .order-table thead th {
+    padding-top: 20px;
+    padding-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .orders-v2 .order-table tbody td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 13px;
+  }
+
+  .orders-v2 .order-table thead th:first-child,
+  .orders-v2 .order-table tbody td:first-child {
+    padding-left: 18px;
+  }
+
+  .orders-v2 .order-table thead th:last-child,
+  .orders-v2 .order-table tbody td:last-child {
+    padding-right: 18px;
+  }
+
+  .orders-v2 .order-table tbody tr:last-child td {
+    padding-bottom: 20px;
+  }
+
+  .orders-v2 .order-status {
+    min-width: 120px;
+    min-height: 32px;
+    padding: 5px 12px;
+  }
+
+  .orders-v2 .order-card-actions {
+    justify-content: flex-start;
+    padding: 0 18px 20px;
+  }
+}

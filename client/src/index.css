@@ -1,0 +1,724 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./styles/portal-pages.css";
+
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --color-background: hsl(210 20% 98%);
+  --color-foreground: hsl(222 47% 11%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222 47% 11%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222 47% 11%);
+
+  --color-primary: hsl(221 83% 53%);
+  --color-primary-foreground: hsl(210 40% 98%);
+
+  --color-secondary: hsl(210 40% 96.1%);
+  --color-secondary-foreground: hsl(222 47% 11.2%);
+
+  --color-muted: hsl(210 40% 96.1%);
+  --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --color-accent: hsl(210 40% 96.1%);
+  --color-accent-foreground: hsl(222 47% 11.2%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-input: hsl(214.3 31.8% 91.4%);
+  --color-ring: hsl(221 83% 53%);
+
+  --color-chart-1: hsl(221 83% 53%);
+  --color-chart-2: hsl(173 58% 39%);
+  --color-chart-3: hsl(197 37% 24%);
+  --color-chart-4: hsl(43 74% 66%);
+  --color-chart-5: hsl(27 87% 67%);
+
+  --color-sidebar: hsl(222 47% 11%);
+  --color-sidebar-foreground: hsl(210 40% 98%);
+  --color-sidebar-primary: hsl(221 83% 53%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(217 33% 17%);
+  --color-sidebar-accent-foreground: hsl(210 40% 98%);
+  --color-sidebar-border: hsl(217 33% 17%);
+  --color-sidebar-ring: hsl(212.7 26.8% 83.9%);
+}
+
+@font-face {
+  font-family: "HvD Brandon Grotesque";
+  src: url("/font/HvDTrial_Brandon_Grotesque_bold-BF64a625c9151d5.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.custom-font {
+  padding: 16px 32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: #000;
+  letter-spacing: 1px;
+}
+
+/* Basic background helper used by the new login page */
+.new-bg-2 {
+  background: radial-gradient(circle at top left, #111 0, #000 45%, #020617 100%);
+}
+
+/* Fixed support card position on login page (bottom-right, no extra scroll) */
+.customizer-btn-1 {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 50;
+}
+
+/* Visual style for the support card: white pill with strong radius */
+.support-card {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 999px; /* strong pill radius */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Dashboard styles */
+.overlay-1 {
+  position: relative;
+  z-index: 10;
+}
+
+.service-package {
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.manage-btn {
+  border-radius: 9999px;
+  padding: 8px 24px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.manage-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-light {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+}
+
+.btn-light:hover {
+  background: #f0f0f0;
+}
+
+.btn-dark {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-dark:hover {
+  background: #1a1a1a;
+}
+
+/* Carousel slider styles */
+.slider-left {
+  background-color: #4b3a5c;
+  color: #fff;
+  padding: 60px 70px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-left h6 {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  padding-bottom: 2rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.slider-left h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.slider-left p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.right-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Knowledge Base card styles */
+.kb-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.kb-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.kb-card .arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 767.98px) {
+  .slider-left {
+    padding: 30px 20px;
+  }
+
+  .right-image-wrap img {
+    height: 300px;
+  }
+}
+
+/* Right sidebar notification styles */
+.notification-1 {
+  position: relative;
+}
+
+.hover-panel {
+  pointer-events: none;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.notification-1:hover .hover-panel {
+  pointer-events: auto;
+}
+
+/* New Order/Appointment Page Styles */
+.new-bg-1 {
+  position: relative;
+}
+
+.new-bg-2 {
+  background: radial-gradient(circle at top left, #111 0, #000 45%, #020617 100%);
+}
+
+.new-bg-3 {
+  background-color: #000000;
+}
+
+.new-bg-4 {
+  background: radial-gradient(circle at top left, #111 0, #000 45%, #020617 100%);
+}
+
+.bg-grey-new {
+  background-color: #f5f5f5;
+}
+
+.email-section,
+.phone-section,
+.shipping-section {
+  margin-bottom: 2rem;
+}
+
+.email-label,
+.phone-number {
+  font-size: 0.875rem;
+}
+
+.email-value {
+  font-size: 1rem;
+}
+
+.edit-link {
+  color: #b388ff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.edit-link:hover {
+  text-decoration: underline;
+}
+
+.realtor-card {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.verified-badge-1 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #b388ff;
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.optional-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.order-card {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.order-card:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.icon-bg {
+  background-color: #6f4a8e;
+  flex-shrink: 0;
+}
+
+.accordion-flush .accordion-item {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion-flush .accordion-button {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+}
+
+.accordion-flush .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.accordion-flush .accordion-button::after {
+  display: none !important;
+}
+
+.form-section {
+  padding: 0;
+}
+
+.icon-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.save-btn {
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 136, 255, 0.3);
+}
+
+.btn-check-label {
+  user-select: none;
+  display: inline-block;
+}
+
+.time-slot {
+  cursor: pointer;
+  user-select: none;
+}
+
+.time-slot.selected {
+  position: relative;
+}
+
+.price-section {
+  color: #ffffff;
+}
+
+.price-section .item {
+  padding: 0.5rem 0;
+}
+
+.remove-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.remove-icon:hover {
+  color: #ffffff;
+}
+
+.total {
+  font-size: 1.1rem;
+}
+
+.card-1 {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.input-group-text {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.form-control:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(179, 136, 255, 0.25);
+}
+
+.form-check-input {
+  accent-color: #b388ff;
+}
+
+/* Feature listing MLS page 4 tables (from 4.html) */
+.left {
+  text-align: left !important;
+}
+.right {
+  text-align: right !important;
+}
+.center {
+  text-align: center !important;
+}
+.bold {
+  font-weight: 600;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.address {
+  font-size: 12px;
+  font-weight: 600;
+}
+.vertical-align-top {
+  vertical-align: top;
+}
+.vertical-align-middle {
+  vertical-align: middle;
+}
+.column-1 {
+  width: 100%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 33.33%;
+}
+.column-5 {
+  width: 20%;
+}
+td.sep-left {
+  border-right: 0.5px solid #d1d5db;
+  padding-right: 9px;
+  vertical-align: top;
+}
+td.sep-middle {
+  border-right: 0.5px solid #d1d5db;
+  padding-left: 9px;
+  padding-right: 9px;
+  vertical-align: top;
+}
+td.sep-right {
+  padding-left: 9px;
+  vertical-align: top;
+}
+.body-table-container {
+  font-size: 10px !important;
+}
+/* Oversize 17×11 MLS column — Arial; slightly tighter for short public remarks */
+.body-table-container.feature-sheet-p4-pdf-spacing {
+  font-family: Arial, Helvetica, "Liberation Sans", "Helvetica Neue", sans-serif !important;
+  font-size: 7px !important;
+  line-height: 1.28 !important;
+}
+.feature-sheet-p4-pdf-spacing .nested-Table th,
+.feature-sheet-p4-pdf-spacing .nested-Table td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  line-height: 1.28;
+}
+.feature-sheet-p4-pdf-spacing .header-table td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 1.28;
+}
+.feature-sheet-p4-pdf-spacing .footer-table td {
+  line-height: 1.28;
+}
+table.table > td,
+.column-1,
+.column-2,
+.column-3 {
+  padding: 0;
+  border-spacing: 0;
+}
+.nested-Table td,
+.table td {
+  text-align: left;
+}
+.nested-Table th,
+.table th {
+  text-align: left;
+  font-weight: 600;
+  width: 130px;
+}
+
+.btn-custom {
+  transition: all 0.2s;
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 136, 255, 0.3);
+}
+
+/* Property Card Styles */
+.property-card {
+  background: #040405;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,rgba(145, 158, 171, 0.12) 0px 12px 24px -4px !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.property-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.property-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background-color: white;
+}
+
+.property-status {
+  background-color: #10b981;
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Form Control Styles */
+.form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.form-control:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(179, 136, 255, 0.25);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #b388ff;
+  border-color: #b388ff;
+  color: #000000;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #9c6fe6;
+  border-color: #9c6fe6;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* HERO SECTION */
+.hero-section {
+  overflow: hidden;
+}
+
+/* LEFT TEXT */
+.hero-content {
+  padding-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* GLASS LOGO CONTAINER */
+.glass-logo {
+  position: relative;
+  transform:
+    perspective(1000px)
+    rotateY(-12deg)
+    rotateX(2deg)
+    skewY(-2deg);
+}
+
+/* LOGO IMAGE - Reduced width, SVG-friendly */
+.glass-logo-img {
+  max-width: 35vw;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+  filter: blur(0.2px);
+  object-fit: contain;
+}
+
+/* OPTIONAL: subtle reflection */
+.glass-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* SHIMMER LOADER */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  
+  /* Ensure all text elements use Plus Jakarta Sans */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, label, li, td, th, 
+  code, pre, small, strong, em, b, i, u, sub, sup, blockquote, cite, abbr, address, 
+  article, aside, figcaption, figure, footer, header, main, nav, section, time,
+  [class*="font-"] {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+  }
+  
+  /* Override any component-specific font declarations */
+  /* .font-sans, .font-mono, .font-serif {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+  } */
+}

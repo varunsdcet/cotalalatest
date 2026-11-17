@@ -1,0 +1,39 @@
+# dependencies / build
+node_modules/
+dist/
+*.zip
+*.tar.gz
+.DS_Store
+
+# local / env
+.local/
+.env
+.env.*
+!.env.example
+
+# Firebase local cache (keep .firebaserc)
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+
+# Vite
+vite.config.ts.*
+vite
+
+# Cursor / IDE (must never be committed)
+.cursor/
+.cursorignore
+.cursorrules
+AGENTS.md
+*.cursor*
+.vscode/
+.idea/
+
+# Accidental macOS duplicate tree
+client/src 2/
+
+# local-only chat helper
+client/src/lib/chat-service.ts
+
+# junk zero-byte files
+rest-express@1.0.0

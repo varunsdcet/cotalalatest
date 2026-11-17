@@ -1,0 +1,180 @@
+/* Fonts: load once; all rules scoped to .oversize-feature-sheet-print (oversize order page preview only) */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
+
+/*
+ * Page: 1632×1056 @ full width; scales down with viewport. White bleed frame.
+ * Content: 1580×1004 — 26px inset on all sides (matches fixed width/height when page is full size).
+ */
+.oversize-feature-sheet-print .oversize-fs-page-shell {
+  width: min(100%, 1632px);
+  aspect-ratio: 1632 / 1056;
+  height: auto;
+  min-height: 0;
+  position: relative;
+  background: #fff;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.oversize-feature-sheet-print .oversize-fs-page-content {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  right: 26px;
+  bottom: 26px;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Paragraph / MLS body — Mulish (Muli). Headings — Nimbus Sans → Helvetica */
+.oversize-feature-sheet-print {
+  --oversize-fs-heading: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --oversize-fs-body: "Mulish", ui-sans-serif, system-ui, sans-serif;
+  /* Dense 17×11 MLS — body cells smaller than 10px */
+  --oversize-table-font: 7px;
+  --oversize-header-font: 9px;
+  --oversize-address-font: 11px;
+}
+
+.oversize-feature-sheet-print .table,
+.oversize-feature-sheet-print .nested-Table {
+  font-family: var(--oversize-fs-body);
+}
+
+/* MLS header (page 4 static) */
+.oversize-feature-sheet-print .t-header-col-1,
+.oversize-feature-sheet-print .t-header-col-3 {
+  font-family: var(--oversize-fs-heading);
+  font-size: var(--oversize-header-font);
+  font-weight: 600;
+}
+
+.oversize-feature-sheet-print .t-header-col-2 {
+  font-family: var(--oversize-fs-heading);
+  font-size: calc(var(--oversize-header-font) + 1px);
+  text-align: center;
+}
+
+.oversize-feature-sheet-print .address {
+  font-size: var(--oversize-address-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--oversize-fs-heading);
+}
+
+.oversize-feature-sheet-print .nested-Table th {
+  font-size: var(--oversize-table-font);
+  font-weight: 600;
+  text-align: left;
+  color: color-mix(in srgb, currentColor 88%, transparent);
+}
+
+.oversize-feature-sheet-print .nested-Table td {
+  font-size: var(--oversize-table-font);
+  font-weight: 400;
+  color: color-mix(in srgb, currentColor 75%, transparent);
+}
+
+.oversize-feature-sheet-print .table td,
+.oversize-feature-sheet-print .table th,
+.oversize-feature-sheet-print .nested-Table td,
+.oversize-feature-sheet-print .nested-Table th {
+  padding: 1px 3px;
+  line-height: 1.28;
+}
+
+/* Override global feature-sheet tabloid compact rules inside this page only */
+.oversize-feature-sheet-print .body-table-container.feature-sheet-p4-pdf-spacing {
+  font-family: var(--oversize-fs-body) !important;
+  font-size: var(--oversize-table-font) !important;
+  line-height: 1.28 !important;
+}
+
+.oversize-feature-sheet-print .feature-sheet-p4-pdf-spacing .nested-Table th,
+.oversize-feature-sheet-print .feature-sheet-p4-pdf-spacing .nested-Table td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  line-height: 1.28;
+}
+
+.oversize-feature-sheet-print .feature-sheet-p4-pdf-spacing .header-table td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 1.25;
+}
+
+/* Page 4: when Public Remarks block is absent — MLS a notch larger than default 7/9/11 */
+.oversize-feature-sheet-print .body-table-container.feature-sheet-p4-no-public-remarks {
+  --oversize-table-font: 9px;
+  --oversize-header-font: 11px;
+  --oversize-address-font: 13px;
+}
+
+/* Public remarks — slightly larger than MLS grid, still compact */
+.oversize-feature-sheet-print .feature-sheet-public-remarks {
+  font-family: var(--oversize-fs-body);
+  font-size: 8px;
+  line-height: 1.45;
+  font-weight: 300;
+}
+
+.oversize-feature-sheet-print .feature-sheet-public-remarks .nested-Table th,
+.oversize-feature-sheet-print .feature-sheet-public-remarks .nested-Table td {
+  font-size: 8px;
+  line-height: 1.45;
+  font-weight: 300;
+}
+
+/* Footer disclaimer */
+.oversize-feature-sheet-print .footer-table td,
+.oversize-feature-sheet-print .footer-table.footer td {
+  font-size: 8px !important;
+  font-family: var(--oversize-fs-body);
+}
+
+.oversize-feature-sheet-print .footer-table strong {
+  font-weight: 700;
+}
+
+.oversize-feature-sheet-print strong {
+  font-weight: 700;
+}
+
+/* Cover column — Welcome (paragraph) + address (main heading) */
+.oversize-feature-sheet-print [data-pdf-oversize-welcome] p {
+  font-family: var(--oversize-fs-body);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.oversize-feature-sheet-print [data-pdf-oversize-welcome] h1 {
+  font-family: var(--oversize-fs-heading);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.oversize-feature-sheet-print [data-pdf-oversize-agent-row] h2,
+.oversize-feature-sheet-print [data-pdf-oversize-agent-row] p {
+  font-family: var(--oversize-fs-body);
+}
+
+/* Page 2 left — listing title + description block */
+.oversize-feature-sheet-print .oversize-fs-page2-title {
+  font-family: var(--oversize-fs-heading);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+/* Font size controlled in oversize-feature-sheets-order.tsx (Tailwind) — do not set font-size here or it overrides text-[*px] */
+.oversize-feature-sheet-print [data-pdf-export="listing-description"] {
+  font-family: var(--oversize-fs-body);
+  font-weight: 300;
+}

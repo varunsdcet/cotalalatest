@@ -1,0 +1,543 @@
+/* Dashboard (home-3 design). Scoped under .dashboard-home because .new-bg-1 etc. are reused by other pages. */
+
+.dashboard-home .new-bg-1 {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  min-height: 400px;
+  max-height: 640px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* Tall banner + greeting slightly below the CTA */
+  padding: 140px 50px 40px;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.dashboard-home .service-package {
+  min-height: 0;
+  padding-top: 1.25rem;
+}
+
+.dashboard-home .new-bg-1 h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.dashboard-home .overlay-1 {
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-home .top-button {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: 11;
+}
+
+.dashboard-home .custom-font {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #000;
+  color: #fff;
+  border-radius: 2rem;
+  letter-spacing: 1px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-home .custom-font:hover {
+  background: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .dashboard-home .new-bg-1 {
+    height: 42vh;
+    min-height: 300px;
+    max-height: 480px;
+    padding: 110px 20px 28px;
+  }
+
+  .dashboard-home .new-bg-1 h1 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .dashboard-home .top-button {
+    right: 16px;
+    top: 16px;
+  }
+
+  .dashboard-home .custom-font {
+    padding: 10px 18px;
+    font-size: 0.6875rem;
+  }
+}
+
+/* Section titles */
+.dashboard-home .appointments-title,
+.dashboard-home .print-orders-title,
+.dashboard-home .section-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.dashboard-home .section-title.mb-0 {
+  margin-bottom: 0;
+}
+
+.dashboard-home .section-title-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #bdbdbd;
+  line-height: 0;
+}
+
+.dashboard-home .section-title-link svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Upcoming service appointments */
+.dashboard-home .appointment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: #040405;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.dashboard-home .appointment-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-home .appointment-content {
+  padding: 1.25rem 1.25rem 0.75rem;
+}
+
+.dashboard-home .appointment-address {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.dashboard-home .appointment-date {
+  color: #b388ff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.dashboard-home .appointment-services {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.dashboard-home .appointment-footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.875rem 1.25rem;
+}
+
+.dashboard-home .manage-appointments {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.dashboard-home .manage-appointments:hover {
+  opacity: 0.7;
+}
+
+/* Recent listing actions — custom hover labels matching the supplied reference. */
+.dashboard-home .property-card .hover-overlay {
+  height: 40px;
+  overflow: visible;
+  background: #714c8f;
+  z-index: 4;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-home .property-card .icon-group {
+  align-items: center;
+  gap: 26px;
+}
+
+.dashboard-home .property-card .property-img {
+  transition: filter 0.22s ease, transform 0.28s ease;
+}
+
+.dashboard-home .property-card:hover .property-img {
+  filter: brightness(0.76);
+  transform: scale(1.015);
+}
+
+.dashboard-home .dashboard-action-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  z-index: 5;
+  min-width: 138px;
+  padding: 11px 16px;
+  border-radius: 3px 3px 0 0;
+  background: rgba(18, 18, 18, 0.9);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.dashboard-home .dashboard-card-action {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.dashboard-home .dashboard-card-action:hover,
+.dashboard-home .dashboard-card-action:focus-visible {
+  transform: scale(1.12);
+}
+
+.dashboard-home .dashboard-card-action:disabled {
+  cursor: wait;
+  opacity: 0.45;
+}
+
+/* Recent print orders */
+.dashboard-home .print-orders-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #040405;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+}
+
+.dashboard-home .print-orders-table {
+  width: 100%;
+  min-width: 1120px;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.dashboard-home .print-orders-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.dashboard-home .print-orders-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #1a1a1a;
+  vertical-align: middle;
+}
+
+.dashboard-home .print-orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dashboard-home .product-name {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dashboard-home .product-subtitle {
+  display: block;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+}
+
+.dashboard-home .print-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+
+.dashboard-home .print-product-thumb {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #f5f5f5, #b9c3d0);
+  color: #59606a;
+}
+
+.dashboard-home .print-product-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.dashboard-home .print-product-thumb svg {
+  width: 26px;
+  height: 26px;
+}
+
+.dashboard-home .product-description {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dashboard-home .status-pending,
+.dashboard-home .status-progress,
+.dashboard-home .status-waiting,
+.dashboard-home .status-complete,
+.dashboard-home .status-approved,
+.dashboard-home .status-shipped,
+.dashboard-home .status-cancelled {
+  font-weight: 600;
+}
+
+.dashboard-home .status-pending {
+  color: #ffb547;
+}
+
+.dashboard-home .status-progress {
+  color: #b388ff;
+}
+
+.dashboard-home .status-waiting {
+  color: #9ca3af;
+}
+
+.dashboard-home .status-complete {
+  color: #7cff6b;
+}
+
+.dashboard-home .status-approved,
+.dashboard-home .status-shipped {
+  color: #57e774;
+  border-color: rgba(40, 201, 74, 0.38);
+  background: rgba(8, 87, 25, 0.42);
+}
+
+.dashboard-home .status-cancelled {
+  color: #ff6b6b;
+}
+
+.dashboard-home .print-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dashboard-home .print-status-pill svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+.dashboard-home .print-status-pill.status-pending {
+  border-color: rgba(255, 181, 71, 0.5);
+  background: rgba(130, 77, 0, 0.36);
+}
+
+.dashboard-home .print-status-pill.status-progress,
+.dashboard-home .print-status-pill.status-waiting {
+  border-color: rgba(176, 130, 242, 0.45);
+  background: rgba(77, 46, 118, 0.3);
+}
+
+.dashboard-home .print-status-pill.status-cancelled {
+  border-color: rgba(255, 74, 74, 0.45);
+  background: rgba(126, 16, 25, 0.35);
+}
+
+.dashboard-home .proof-button {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dashboard-home .proof-button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.dashboard-home .proof-button.is-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  border: 0;
+  background: linear-gradient(90deg, #6f35ff, #8a2dff);
+  box-shadow: 0 7px 20px rgba(112, 51, 255, 0.3);
+  color: #fff;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.dashboard-home .proof-button.is-review:hover {
+  background: linear-gradient(90deg, #7d49ff, #9b48ff);
+  color: #fff;
+}
+
+.dashboard-home .proof-button.is-review svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard-home .proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-home .proof-review-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.dashboard-home .proof-review-action > span {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.dashboard-home .proof-file-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #b082f2;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.dashboard-home .proof-file-link:hover {
+  color: #cfadff;
+}
+
+.dashboard-home .proof-file-link > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard-home .pdf-file-icon {
+  width: 34px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #f04444;
+  color: #fff;
+}
+
+.dashboard-home .pdf-file-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard-home .print-order-date,
+.dashboard-home .proof-empty {
+  color: rgba(255, 255, 255, 0.56);
+  white-space: nowrap;
+}
+
+.dashboard-home .proof-detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  padding: 9px 15px;
+  border: 1px solid #b082f2;
+  border-radius: 999px;
+  color: #c79cff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dashboard-home .proof-detail-link:hover {
+  background: #b082f2;
+  color: #09070b;
+  text-decoration: none;
+}
+
+/* Footer chat support */
+.dashboard-home .chat-support {
+  border: 1px solid #666;
+  border-radius: 6px;
+  padding: 15px 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.dashboard-home .chat-support .status-dot {
+  height: 10px;
+  width: 10px;
+  background-color: #33dd55;
+  border-radius: 50%;
+}

@@ -1,0 +1,1110 @@
+/*
+ * My Account v2 — rules from my-account-2.html / cotala-new custom.css that are
+ * missing from portal-pages.css, plus the small widgets the React port needs.
+ * Everything is scoped to .my-account-v2 (page root) or .ma-* (portalled dialog).
+ */
+
+/* ---------- layout & typography ---------- */
+.my-account-v2 h2 {
+  margin: 0 0 46px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: #fff;
+}
+.my-account-v2 h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.my-account-v2 h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.my-account-v2 .account-sidebar {
+  flex-shrink: 0;
+}
+.my-account-v2 .account-content {
+  min-width: 0;
+}
+@media (max-width: 1023px) {
+  .my-account-v2 .account-sidebar {
+    width: 100%;
+    min-height: 0;
+    border-right: none;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .my-account-v2 .account-content {
+    padding: 24px 0;
+  }
+}
+.my-account-v2 .ma-hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1rem 0 1.5rem;
+}
+.my-account-v2 .text-grey {
+  color: #b5b5b6;
+}
+.my-account-v2 .form-control {
+  display: block;
+  width: 100%;
+}
+.my-account-v2 .edit-link {
+  background: transparent;
+  border: none;
+  letter-spacing: 0.04em;
+}
+.my-account-v2 .edit-link:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+.my-account-v2 .ma-btn-sm {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+.my-account-v2 .btn-purple:disabled,
+.my-account-v2 .btn-outline-custom:disabled,
+.my-account-v2 .btn-dark-custom:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ---------- status / loading ---------- */
+.ma-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+.ma-notice--success {
+  color: #57ff57;
+}
+.ma-notice--error {
+  color: #ff7777;
+}
+.my-account-v2 .ma-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 0;
+}
+.my-account-v2 .ma-error-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 82, 82, 0.35);
+  background: rgba(255, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: #ff9a9a;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- profile ---------- */
+.my-account-v2 .ma-readonly-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+.my-account-v2 .shipping-section .form-label {
+  font-weight: 500;
+  color: #f1f1f1;
+  min-width: 110px;
+  margin-bottom: 0;
+}
+.my-account-v2 .ma-readonly-value {
+  color: #fff;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.my-account-v2 .shipping-section .optional-label {
+  display: block;
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+.my-account-v2 .ma-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.my-account-v2 .ma-social-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+.my-account-v2 .ma-social-list a:hover {
+  color: #c8a2c8;
+}
+.my-account-v2 .ma-radio-row {
+  display: flex;
+  gap: 24px;
+}
+.my-account-v2 .ma-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+.my-account-v2 .ma-radio input,
+.my-account-v2 .ma-field-check input {
+  accent-color: #c8a2c8;
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- login & security ---------- */
+.my-account-v2 .eye-icon {
+  background: transparent;
+  border: none;
+}
+.my-account-v2 .ma-switch {
+  appearance: none;
+  flex-shrink: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 999px;
+  background: #2b2b30;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.my-account-v2 .ma-switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+}
+.my-account-v2 .ma-switch:checked {
+  background: #d0a0ff;
+}
+.my-account-v2 .ma-switch:checked::after {
+  transform: translateX(24px);
+}
+.my-account-v2 .ma-switch:focus-visible {
+  outline: 2px solid #bb86fc;
+  outline-offset: 2px;
+}
+
+/* ---------- branding ---------- */
+.my-account-v2 .add-btn {
+  background-color: #1f1f1f;
+  border: 1px solid #2c2c2c;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  transition: background-color 0.3s;
+}
+.my-account-v2 .add-btn:hover {
+  background-color: #333;
+}
+.my-account-v2 .ma-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 30;
+  min-width: 220px;
+  background: #151517;
+  border: 1px solid #2a2b32;
+  border-radius: 12px;
+  padding: 6px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+.my-account-v2 .ma-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+.my-account-v2 .ma-menu button:hover {
+  background: #232327;
+}
+.my-account-v2 .ma-menu small {
+  color: #8d8d95;
+}
+
+/* Branding asset uploader modal */
+.my-account-v2 .ma-brand-upload-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.my-account-v2 .ma-brand-upload-dialog {
+  width: min(640px, 100%);
+  overflow: hidden;
+  border: 1px solid #303134;
+  border-radius: 32px;
+  background: #1d1e20;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.58);
+  color: #fff;
+}
+
+.my-account-v2 .ma-brand-upload-body {
+  padding: 48px 42px 30px;
+}
+
+.my-account-v2 .ma-brand-upload-heading {
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.my-account-v2 .ma-brand-upload-heading h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.my-account-v2 .ma-brand-upload-heading p {
+  margin: 0;
+  color: #d4d4d6;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.my-account-v2 .ma-brand-dropzone {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  border: 1px dashed #65666a;
+  border-radius: 22px;
+  background: rgba(15, 15, 16, 0.08);
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.my-account-v2 .ma-brand-dropzone.is-dragging {
+  border-color: #b082f2;
+  background: rgba(176, 130, 242, 0.08);
+}
+
+.my-account-v2 .ma-brand-dropzone > svg {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 12px;
+  fill: #424244;
+  color: #424244;
+}
+
+.my-account-v2 .ma-brand-dropzone strong {
+  margin-bottom: 2px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.my-account-v2 .ma-brand-dropzone span {
+  color: #85858a;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.my-account-v2 .ma-brand-dropzone button {
+  margin-top: 14px;
+  padding: 8px 17px;
+  border: 1px solid #4b4c50;
+  border-radius: 9px;
+  background: transparent;
+  color: #aaaab0;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.my-account-v2 .ma-brand-dropzone button:hover:not(:disabled) {
+  border-color: #74757a;
+  background: #26272a;
+  color: #fff;
+}
+
+.my-account-v2 .ma-brand-file-row {
+  position: relative;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 24px;
+  padding: 14px 18px;
+  border: 1px solid #696a6e;
+  border-radius: 20px;
+}
+
+.my-account-v2 .ma-brand-file-remove {
+  position: absolute;
+  top: -19px;
+  right: 9px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #8a8b90;
+  border-radius: 50%;
+  background: #1d1e20;
+  color: #fff;
+}
+
+.my-account-v2 .ma-brand-file-remove svg {
+  width: 15px;
+  height: 15px;
+}
+
+.my-account-v2 .ma-brand-file-name {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.my-account-v2 .ma-brand-file-name svg {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 auto;
+  color: #8c8d92;
+}
+
+.my-account-v2 .ma-brand-file-name span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-account-v2 .ma-brand-usage {
+  position: relative;
+  min-width: 175px;
+  color: #ed464c;
+}
+
+.my-account-v2 .ma-brand-usage.has-value {
+  color: #aaaab0;
+}
+
+.my-account-v2 .ma-brand-usage select {
+  width: 100%;
+  padding: 8px 28px 8px 8px;
+  border: 0;
+  outline: 0;
+  appearance: none;
+  background: transparent;
+  color: currentColor;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: right;
+  cursor: pointer;
+}
+
+.my-account-v2 .ma-brand-usage select option {
+  background: #242528;
+  color: #fff;
+}
+
+.my-account-v2 .ma-brand-usage > svg {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.my-account-v2 .ma-brand-upload-error {
+  margin: 12px 0 0;
+  color: #ff6b72;
+  font-size: 13px;
+}
+
+.my-account-v2 .ma-brand-upload-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px 26px;
+  border-top: 1px solid #3a3b3e;
+}
+
+.my-account-v2 .ma-brand-modal-cancel,
+.my-account-v2 .ma-brand-modal-continue {
+  min-width: 126px;
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid #48494d;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.my-account-v2 .ma-brand-modal-cancel {
+  background: transparent;
+  color: #a1a1a6;
+}
+
+.my-account-v2 .ma-brand-modal-continue {
+  background: #4a4b4e;
+  color: #fff;
+}
+
+.my-account-v2 .ma-brand-modal-continue:disabled,
+.my-account-v2 .ma-brand-modal-cancel:disabled {
+  opacity: 0.46;
+  cursor: not-allowed;
+}
+
+.my-account-v2 .ma-brand-modal-continue:not(:disabled):hover {
+  background: #606166;
+}
+
+.my-account-v2 .ma-brand-modal-continue svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 700px) {
+  .my-account-v2 .ma-brand-upload-overlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+  .my-account-v2 .ma-brand-upload-dialog {
+    margin: 12px 0;
+    border-radius: 22px;
+  }
+  .my-account-v2 .ma-brand-upload-body {
+    padding: 42px 18px 28px;
+  }
+  .my-account-v2 .ma-brand-upload-heading {
+    margin-bottom: 34px;
+  }
+  .my-account-v2 .ma-brand-upload-heading h3 {
+    font-size: 24px;
+  }
+  .my-account-v2 .ma-brand-upload-heading p {
+    font-size: 16px;
+  }
+  .my-account-v2 .ma-brand-dropzone {
+    min-height: 220px;
+  }
+  .my-account-v2 .ma-brand-file-row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .my-account-v2 .ma-brand-usage {
+    width: 100%;
+  }
+  .my-account-v2 .ma-brand-usage select {
+    text-align: left;
+  }
+  .my-account-v2 .ma-brand-upload-footer {
+    padding: 22px 18px 26px;
+  }
+}
+.my-account-v2 .ma-asset-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0b0b0b;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.my-account-v2 .ma-asset-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.my-account-v2 .ma-asset-card--logo .ma-asset-media {
+  background: #f4f4f4;
+}
+.my-account-v2 .ma-asset-card--logo .ma-asset-media img {
+  object-fit: contain;
+  padding: 14px;
+}
+.my-account-v2 .ma-asset-card--on-dark .ma-asset-media {
+  background: #1b1b1d;
+}
+.my-account-v2 .ma-asset-empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  background: #0b0b0b;
+}
+.my-account-v2 .ma-asset-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.my-account-v2 .ma-asset-media:hover .ma-asset-overlay,
+.my-account-v2 .ma-asset-media:focus-visible .ma-asset-overlay,
+.my-account-v2 .ma-asset-media:disabled .ma-asset-overlay {
+  opacity: 1;
+}
+.my-account-v2 .ma-dot {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+.my-account-v2 .color-item {
+  text-align: center;
+  width: 110px;
+}
+.my-account-v2 .ma-color-swatch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.my-account-v2 .ma-color-swatch input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.my-account-v2 .ma-color-swatch--invalid {
+  background: repeating-linear-gradient(45deg, #2a2a2a 0 6px, #1a1a1a 6px 12px);
+  border-color: #ff7777;
+}
+.my-account-v2 .ma-color-invalid {
+  color: #ff7777;
+  font-size: 11px;
+  margin-top: 2px;
+}
+.my-account-v2 .ma-hex-input {
+  margin-top: 6px;
+  width: 88px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: #b5b5b6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.my-account-v2 .ma-hex-input:focus {
+  outline: none;
+  border-color: #b284f6;
+  color: #fff;
+}
+.my-account-v2 .font-selection .form-control,
+.my-account-v2 .font-selection .form-select {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 6px;
+}
+.my-account-v2 .font-selection .form-control:focus {
+  background-color: #1f1f1f;
+  border-color: #555;
+  box-shadow: none;
+}
+.my-account-v2 .font-selection .form-control::placeholder {
+  color: #fff;
+}
+.my-account-v2 .font-selection .icon-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 0;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #fff;
+  background: transparent;
+}
+.my-account-v2 .font-selection .icon-btn:hover:not(:disabled) {
+  background-color: #333;
+}
+.my-account-v2 .font-selection .icon-btn.active {
+  background: #c8a2c8;
+  border-color: #c8a2c8;
+  color: #000;
+}
+.my-account-v2 .font-selection .icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.my-account-v2 .ma-font-picker {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+}
+.my-account-v2 .ma-font-trigger {
+  width: 100%;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 12px;
+  text-align: left;
+  font-size: 14px;
+}
+.my-account-v2 .ma-font-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: #151517;
+  border: 1px solid #2a2b32;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.my-account-v2 .ma-font-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #2a2b32;
+}
+.my-account-v2 .ma-font-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 13px;
+}
+.my-account-v2 .ma-font-menu ul {
+  max-height: 260px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+}
+.my-account-v2 .ma-font-menu li button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  text-align: left;
+}
+.my-account-v2 .ma-font-menu li button:hover,
+.my-account-v2 .ma-font-menu li button.active {
+  background: #26222b;
+}
+.my-account-v2 .ma-font-menu li small {
+  color: #8d8d95;
+  font-size: 11px;
+}
+.my-account-v2 .ma-font-empty,
+.my-account-v2 .ma-font-more {
+  padding: 8px 12px;
+  color: #8d8d95;
+  font-size: 12px;
+}
+.my-account-v2 .ma-font-more {
+  border-top: 1px solid #2a2b32;
+}
+
+/* ---------- default service package ---------- */
+.my-account-v2 .service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 0.75rem 0;
+  width: 500px;
+  max-width: 100%;
+}
+.my-account-v2 .service-label {
+  color: #fff;
+  font-size: 0.95rem;
+}
+.my-account-v2 .service-value {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: right;
+}
+.my-account-v2 .ma-service-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  max-width: 500px;
+}
+.my-account-v2 .ma-service-actions .btn-edit {
+  margin-left: auto;
+  letter-spacing: 1px;
+}
+.my-account-v2 .ma-option-card {
+  width: 100%;
+}
+.my-account-v2 .ma-check {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+.my-account-v2 .ma-check.on {
+  background: #fff;
+  border-color: #fff;
+}
+.my-account-v2 .ma-option-card .badge-tag {
+  top: 16px;
+  left: 16px;
+  right: auto;
+}
+
+/* ---------- billing ---------- */
+.my-account-v2 .ma-billing > h2 {
+  margin: 0 0 47px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+.my-account-v2 .ma-payment-title {
+  color: #aaa9ad;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.my-account-v2 .ma-payment-divider {
+  max-width: 720px;
+  margin: 13px 0 39px;
+  border-color: #29292b;
+}
+.my-account-v2 .ma-card-stack {
+  max-width: calc(100% - 50px);
+}
+.my-account-v2 .ma-card-num {
+  font-size: 20px;
+}
+.my-account-v2 .ma-card-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+}
+.my-account-v2 .ma-card-pills .active {
+  background: #d8b4fe;
+  color: #000;
+}
+.my-account-v2 .ma-empty-cards {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 420px;
+}
+.my-account-v2 .ma-payment-actions {
+  margin-top: 16px;
+}
+.my-account-v2 .ma-payment-actions .btn-dark-custom {
+  min-width: 80px;
+  padding: 10px 22px;
+  font-size: 10px;
+  line-height: 1.2;
+}
+.my-account-v2 .ma-add-address {
+  min-height: 200px;
+  width: 100%;
+}
+.my-account-v2 .ma-add-address-label {
+  font-size: 18px;
+  font-weight: 500;
+}
+.my-account-v2 .ma-address-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8d8d95;
+  margin-top: 4px;
+}
+.my-account-v2 .default-card .ma-address-label {
+  margin-top: 28px;
+}
+.my-account-v2 .default-card .ma-address-label + .name {
+  margin-top: 2px;
+}
+.my-account-v2 .address-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.my-account-v2 .address-actions button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #b082f2;
+  font-size: 12px;
+  cursor: pointer;
+}
+.my-account-v2 .address-actions button:hover {
+  text-decoration: underline;
+}
+
+/* ---------- shipping address book ---------- */
+.my-account-v2 .shipping-address-book h2 {
+  margin: 0 0 46px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+.my-account-v2 .shipping-address-book .address-title {
+  color: #aaa9ad;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.my-account-v2 .shipping-address-book .ma-hr {
+  margin: 17px 0 16px;
+  border-color: #29292b;
+}
+.my-account-v2 .shipping-address-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.my-account-v2 .shipping-address-card,
+.my-account-v2 .shipping-address-book .ma-add-address {
+  min-height: 237px;
+}
+.my-account-v2 .shipping-address-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 20px 17px;
+  color: #fff;
+}
+.my-account-v2 .shipping-address-card.default-card {
+  padding-top: 39px;
+}
+.my-account-v2 .shipping-address-card .default-strip {
+  height: 31px;
+  padding: 8px 15px;
+  line-height: 15px;
+}
+.my-account-v2 .shipping-address-card.default-card .name {
+  margin-top: 0;
+}
+.my-account-v2 .shipping-address-card .name {
+  margin: 0 0 6px;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+.my-account-v2 .shipping-address-copy,
+.my-account-v2 .shipping-address-contact {
+  color: #f3f3f4;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.my-account-v2 .shipping-address-contact {
+  margin-top: 7px;
+}
+.my-account-v2 .shipping-address-contact + .shipping-address-contact {
+  margin-top: 0;
+}
+.my-account-v2 .shipping-instruction-link {
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #744e88;
+  font-size: 12px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+.my-account-v2 .shipping-instruction-link:hover {
+  color: #b082f2;
+  text-decoration: underline;
+}
+.my-account-v2 .shipping-address-card .address-actions {
+  margin-top: auto;
+  padding-top: 16px;
+}
+.my-account-v2 .shipping-address-book .ma-add-address {
+  padding: 20px;
+  border: 1px solid #252527;
+  background: #111;
+  font-family: inherit;
+}
+.my-account-v2 .shipping-address-book .ma-add-address svg {
+  width: 31px;
+  height: 31px;
+  margin-bottom: 10px;
+  stroke-width: 3;
+}
+.my-account-v2 .shipping-address-book .ma-add-address-label {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+@media (max-width: 1180px) {
+  .my-account-v2 .shipping-address-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 680px) {
+  .my-account-v2 .shipping-address-book h2 {
+    margin-bottom: 32px;
+  }
+  .my-account-v2 .shipping-address-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 560px) {
+  .my-account-v2 .card-stack {
+    width: 100%;
+    height: 210px;
+  }
+}
+
+/* ---------- address dialog (same centered overlay as branding) ---------- */
+.my-account-v2 .ma-address-dialog {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+}
+.my-account-v2 .ma-address-dialog .ma-brand-upload-body {
+  overflow-y: auto;
+}
+.ma-dialog {
+  background: #1d1e20;
+  border: 1px solid #303134;
+  border-radius: 32px;
+  color: #fff;
+  width: min(560px, calc(100vw - 32px));
+  max-width: min(560px, calc(100vw - 32px));
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.58);
+}
+.ma-dialog .small-muted {
+  color: #8d8d95;
+  font-size: 13px;
+}
+.ma-address-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.ma-address-form .ma-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ma-address-form .form-control {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+}
+.ma-field-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cfcfd4;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ma-field-check input {
+  accent-color: #c8a2c8;
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 520px) {
+  .ma-address-form {
+    grid-template-columns: 1fr;
+  }
+  .ma-address-form .col-span-2 {
+    grid-column: auto;
+  }
+}
