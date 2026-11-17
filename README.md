@@ -37,7 +37,7 @@ The live product talks to the existing Cotala backend at `cotala.com`. This repo
 Production API:
 
 ```
-https://cotala.com/newcotala24/webapi2025dec/api/
+https://appslure.app/cotalacustomer/api/
 ```
 
 ---
